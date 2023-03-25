@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telekocsi</title>
+    <link rel="stylesheet" href="telekocsi.css">
+</head>
+<body>
+    <div class="tartalom">
+        <h1>Telekocsi</h1>
+        <div class="menu">
+            <ul>
+<li><a href="telekocsi.html">Bemutatkozás</a></li>
+<li>Sofőröknek</li>
+<li>Utasoknak</li>
+<li>Bejelentkezés</li>
+<li>Regisztráció</li>
+  </ul>
+    </div>
+       <h2>Regisztráció</h2>
+       <form id="tartalom" action="/action_page.php" method="post" margin="center">
+        <label for="nev">Név: </label>
+    <input type="text" name="nev" required ><br>
+    <label for="email">E-mail cím: </label>
+    <input type="email" name ="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ><br>
+    <label for="password">Jelszó: </label>
+    <input type="password" name="Password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Legalább 8 karakter kis és nagy betű valamint számot kell tartalmaznia" value="elsoJelszo"><br>
+    <label for="password">Jelszó ismét: </label>
+    <input type="password" name="PasswordAgain"  required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Legalább 8 karakter kis és nagy betű valamint számot kell tartalmaznia" value="masodikJelszo"><br>
+
+    <!-- //*nem lesz ott ahol én akarom*// -->
+
+    <input type="submit" value="Mentés" onclick="toltve()">
+</form>
+ </div >
+    <script>
+function toltve(){
+            let jelszo=document.document.getAttribute("Password").value;
+            let jelszoIsmet=document.document.getAttribute("PasswordAgain").value;
+            if(jelszo!=jelszoIsmet){
+            alert("A jelszavak nem egyeznek")
+
+            /*halvány segédfogalmam sincs*/
+        }
+    }
+    </script>
+</body>
+</html>
